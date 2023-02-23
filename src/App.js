@@ -9,6 +9,7 @@ const App = () => {
   ]);
   const [uniqueId, setUniqueId] = useState(1);
 
+  const resetTodo = () => setTasks([]);
   const addTodo = (title) => {
     setTasks(tasks => [...tasks, {id: uniqueId, title: title}]);
     setUniqueId(id => id + 1);
@@ -17,6 +18,7 @@ const App = () => {
   return (
     <div>
       <h1>TODO App</h1>
+      <button onClick={resetTodo}>リセット</button>
       <TodoInput addTodo={addTodo} />
       <TodoList tasks={tasks} />
     </div>
