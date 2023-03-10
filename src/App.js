@@ -2,18 +2,13 @@
 import TodoInput from './TodoInput';
 import TodoList from './TodoList';
 
-const App = () => {
-
-  // データ
-  const tasks = [
-    { title: 'Todo1つ目', id: 0 },
-    { title: 'Todo2つ目', id: 1 }
-  ];
+const App = ({ store }) => {
+  const { tasks } = store.getState();
 
   return (
     <div>
       <h1>TODO App</h1>
-      <TodoInput />
+      <TodoInput store={store} />
       <TodoList tasks={tasks} />
     </div>
   );
