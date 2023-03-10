@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { createStore } from 'redux';
+import { Provider } from 'react-redux';
 import App from './App';
 import tasksReducer from './todos';
 
@@ -8,11 +9,10 @@ import tasksReducer from './todos';
 const store = createStore(tasksReducer);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
-const renderApp = (store) => root.render(
+root.render(
   <React.StrictMode>
-    <App store={store} />
+    <Provider store={store}>
+      <App />
+    </Provider>
   </React.StrictMode>
 );
-
-store.subscribe(() => renderApp(store));
-renderApp(store);

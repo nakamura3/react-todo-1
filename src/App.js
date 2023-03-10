@@ -2,14 +2,12 @@
 import TodoInput from './TodoInput';
 import TodoList from './TodoList';
 
-const App = ({ store }) => {
-  const { tasks } = store.getState();
-
+const App = () => {
   return (
     <div>
       <h1>TODO App</h1>
-      <TodoInput store={store} />
-      <TodoList tasks={tasks} />
+      <TodoInput />
+      <TodoList />
     </div>
   );
 };

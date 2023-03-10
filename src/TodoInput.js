@@ -1,13 +1,12 @@
 // react-todo-1: input component
+import { connect } from 'react-redux';
 import { inputTask, addTask } from './todos';
 
-const TodoInput = ({ store }) => {
-    const { task } = store.getState();
-
-    const handleChange = e => store.dispatch(inputTask(e.target.value));
+const TodoInput = ({ task, inputTsk, addTsk }) => {
+    const handleChange = e => inputTsk(e.target.value);
     const handleClick = () => {
-        store.dispatch(addTask(task));
-        store.dispatch(inputTask(''));
+        addTsk(task);
+        inputTsk('');
     }
 
     return (
@@ -20,4 +19,10 @@ const TodoInput = ({ store }) => {
     )
 };
 
-export default TodoInput;
+const mapStateToProps = ({ task }) => ({ task });
+const mapDispatchToProps = (dispatch) => ({
+    inputTsk: task => dispatch(inputTask(task)),
+    addTsk: task => dispatch(addTask(task))
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(TodoInput);
