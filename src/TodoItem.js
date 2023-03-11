@@ -1,10 +1,11 @@
 // react-todo-1: item component
+import { ListItem, ListItemText } from '@mui/material';
 
-const TodoItem = (props) => {
+const TodoItem = ({ title, key }) => {
     return (
-        <li>
-            { props.title }
-        </li>
+        <ListItem key={key} disablePadding >
+            <ListItemText primary={`・ ${title}`} />
+        </ListItem>
     )
 };
 

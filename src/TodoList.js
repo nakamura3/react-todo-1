@@ -1,4 +1,5 @@
 // react-todo-1: list component
+import { List } from '@mui/material';
 import TodoItem from './TodoItem';
 
 const TodoList = ({ tasks }) => {
@@ -6,7 +7,7 @@ const TodoList = ({ tasks }) => {
 
     return (
         <div>
-            <ul> {list} </ul>
+            <List> {list} </List>
         </div>
     )
 };

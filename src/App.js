@@ -1,5 +1,6 @@
 // react-todo-1: main component
 import { useSelector, useDispatch } from 'react-redux';
+import { AppBar, Toolbar, Typography, Button } from '@mui/material';
 import TodoInput from './TodoInput';
 import TodoList from './TodoList';
 import { addTask, resetTask } from './todoSlice';
@@ -13,10 +14,18 @@ const App = () => {
 
   return (
     <div>
-      <h1>TODO App</h1>
-      <button onClick={resetTodo}>リセット</button>
-      <TodoInput addTodo={addTodo} />
-      <TodoList tasks={tasks} />
+      <AppBar position="static">
+        <Toolbar>
+          <Typography variant="h4">
+            TODO App
+          </Typography>
+        </Toolbar>
+      </AppBar>
+      <div style={{ padding: '16px' }}>
+        <Button variant="outlined" onClick={resetTodo}>リセット</Button>
+        <TodoInput addTodo={addTodo} />
+        <TodoList tasks={tasks} />
+      </div>
     </div>
   );
 };
