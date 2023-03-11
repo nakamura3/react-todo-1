@@ -1,19 +1,15 @@
 // react-todo-1: main component
-import { useState } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 import TodoInput from './TodoInput';
 import TodoList from './TodoList';
+import { addTask, resetTask } from './todoSlice';
 
 const App = () => {
-  const [tasks, setTasks] = useState([
-    { id: 0, title: 'デフォルトTODO' }
-  ]);
-  const [uniqueId, setUniqueId] = useState(1);
+  const tasks = useSelector(state => state.todo.tasks);
+  const dispatch = useDispatch();
 
-  const resetTodo = () => setTasks([]);
-  const addTodo = (title) => {
-    setTasks(tasks => [...tasks, {id: uniqueId, title: title}]);
-    setUniqueId(id => id + 1);
-  }
+  const resetTodo = () => dispatch(resetTask());
+  const addTodo = (title) => dispatch(addTask(title));
 
   return (
     <div>
