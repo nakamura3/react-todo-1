@@ -14,3 +14,7 @@ TodoInput { 状態: [ inputValue ], 操作関数: { handleChange, handleClick }}
 新規 todoSlice.js { 状態スライスの定義モジュール }
 変更 index.js { store の生成 (configureStore)、Provider の設置 }
 変更 App.js { tasks を useSelector で取得する、addTask, resetTask を dispatch する }
+
+## Step 4. ロガー { redux-logger }
+変更 index.js { 'logger' middleware の組込み }
+参考：https://redux-toolkit.js.org/api/configureStore
