@@ -24,3 +24,7 @@ TodoInput { 状態: [ inputValue ], 操作関数: { handleChange, handleClick }}
 変更 TodoInput.js { TextField, Button }
 変更 TodoList.js { List }
 変更 TodoItem.js { ListItem, ListItemText }
+
+## Step 6. テスト
+### Step 6.1 Action と Reducer のテスト (Jest)
+新規 todoSlice.test.js
