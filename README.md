@@ -37,4 +37,8 @@ TodoInput { 状態: [ inputValue ], 操作関数: { handleChange, handleClick }}
 新規 db.json { }
 変更 App.js { Button 自動入力 を追加 }
 
-
+### Step 6.3 非同期 Action のテスト (redux-mock-store, jest-fetch-mock)
+追加パッケージ redux-mock-store jest-fetch-mock
+新規 setupTests.js { jest-fetch-mock のセットアップ }
+変更 package.json { jest.resetMocks を false に設定 }
+新規 generateTask.test.js { 非同期 Action のテスト定義 }
