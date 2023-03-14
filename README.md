@@ -28,3 +28,13 @@ TodoInput { 状態: [ inputValue ], 操作関数: { handleChange, handleClick }}
 ## Step 6. テスト
 ### Step 6.1 Action と Reducer のテスト (Jest)
 新規 todoSlice.test.js
+
+### Step 6.2 非同期 Action の追加
+追加パッケージ isomorphic-fetch json-server
+新規 db.json { json-server 用のデータ }
+変更 package.json { json-server 起動コマンド json-server を追加 }
+新規 generateTask.js { 非同期 Action の generateTask を定義 }
+新規 db.json { }
+変更 App.js { Button 自動入力 を追加 }
+
+
